@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Draco Cord V8</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div class="header-row">
+      <div>
+        <div class="brand">DRACO CORD V8</div>
+        <div class="tag">REAL-TIME AUDIO DSP</div>
+      </div>
+    </div>
+
+    <section class="panel">
+      <div class="row">
+        <label for="masterGain">Master Gain</label>
+        <span id="masterGainValue">0dB</span>
+      </div>
+      <input id="masterGain" type="range" min="0" max="50" value="0" step="1" />
+      <label class="toggle-row">
+        <input id="masterGainToggle" type="checkbox" />
+        <span>ENABLE 30dB+ LOUDNESS BOOST</span>
+      </label>
+    </section>
+
+    <section class="panel">
+      <div class="row">
+        <label for="voiceClarity">Voice Clarity</label>
+        <span id="voiceClarityValue">0%</span>
+      </div>
+      <input id="voiceClarity" type="range" min="0" max="100" value="0" step="1" />
+    </section>
+
+    <section class="panel">
+      <div class="row">
+        <label>Equalizer</label>
+        <span id="eqToggle">SHOW</span>
+      </div>
+      <div id="eqPanel" class="eq-panel hidden">
+        <div class="eq-band">
+          <label>60Hz</label>
+          <input class="eq-slider" data-band="60" type="range" min="-12" max="12" value="0" step="0.5" />
+          <span class="eq-value">0.0dB</span>
+        </div>
+        <div class="eq-band">
+          <label>250Hz</label>
+          <input class="eq-slider" data-band="250" type="range" min="-12" max="12" value="0" step="0.5" />
+          <span class="eq-value">0.0dB</span>
+        </div>
+        <div class="eq-band">
+          <label>1kHz</label>
+          <input class="eq-slider" data-band="1000" type="range" min="-12" max="12" value="0" step="0.5" />
+          <span class="eq-value">0.0dB</span>
+        </div>
+        <div class="eq-band">
+          <label>4kHz</label>
+          <input class="eq-slider" data-band="4000" type="range" min="-12" max="12" value="0" step="0.5" />
+          <span class="eq-value">0.0dB</span>
+        </div>
+        <div class="eq-band">
+          <label>12kHz</label>
+          <input class="eq-slider" data-band="12000" type="range" min="-12" max="12" value="0" step="0.5" />
+          <span class="eq-value">0.0dB</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="row">
+        <label for="compressor">Compressor</label>
+        <span id="compressorValue">1.0</span>
+      </div>
+      <input id="compressor" type="range" min="1" max="10" value="1" step="0.1" />
+    </section>
+
+    <section class="panel">
+      <div class="row">
+        <label for="distortion">Distortion</label>
+        <span id="distortionValue">0%</span>
+      </div>
+      <input id="distortion" type="range" min="0" max="100" value="0" step="1" />
+    </section>
+
+    <section class="panel">
+      <div class="row">
+        <label for="reverb">Reverb</label>
+        <span id="reverbValue">0%</span>
+      </div>
+      <input id="reverb" type="range" min="0" max="100" value="0" step="1" />
+    </section>
+
+    <section class="panel">
+      <div class="row">
+        <label for="delay">Echo/Delay</label>
+        <span id="delayValue">0%</span>
+      </div>
+      <input id="delay" type="range" min="0" max="100" value="0" step="1" />
+    </section>
+
+    <section class="panel">
+      <div class="row">
+        <label for="speed">Playback Speed</label>
+        <span id="speedValue">1.0x</span>
+      </div>
+      <input id="speed" type="range" min="0.5" max="2" value="1" step="0.1" />
+    </section>
+
+    <div class="button-row">
+      <button id="enableBtn" class="primary">ENABLE</button>
+      <button id="disableBtn" class="secondary">DISABLE</button>
+      <button id="resetBtn" class="danger">RESET</button>
+    </div>
+
+    <div class="status-box">
+      <span>Status:</span>
+      <strong id="statusDisplay">Inactive</strong>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
